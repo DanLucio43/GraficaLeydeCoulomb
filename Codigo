@@ -1,0 +1,17 @@
+#Creador: Gonzalez Rocha Jesus Daniel
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, ax = plt.subplots()
+resultados = np.zeros((100))
+distancias = np.zeros((100))
+k = 8.98755*(10**9)
+
+for i in range(100):
+    distancias[i] = 0.001+(0.001*i)
+    resultados[i] = k *(((5*10**-6)**2)/(distancias[i]**2))
+plt.plot(distancias,resultados, linestyle = 'dotted',color='tab:orange')
+plt.xlabel('Distancia[m]',fontdict={'color':'tab:blue'})
+plt.ylabel('Fuerza[N]',fontdict={'color':'tab:blue'})
+plt.title('Magnitud de la fuerza de Coulomb con dos cargas de 5µC',loc='left',fontdict={'fontweight':'bold'})
+plt.show()
